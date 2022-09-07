@@ -1,4 +1,4 @@
-python ../trainer.py \
+python trainer.py \
   --input \
   data/train/train.zh.bpe.min \
   data/train/train.en.bpe.min \
