@@ -12,7 +12,7 @@ python trainer.py \
   --references \
   data/val/val.en.* \
   --process_group \
-  gloo \
-  --parameters=batch_size=16,update_cycle=2 \
+  nccl \
+  --parameters=batch_size=16,update_cycle=2,device_list=[1] \
   --hparam_set \
   base
