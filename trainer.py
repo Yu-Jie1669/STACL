@@ -174,8 +174,9 @@ def merge_params(params1, params2):
 
     for (k, v) in six.iteritems(params2.values()):
         if k in params_dict:
-            # Override
-            setattr(params, k, v)
+            if k not in ['eos','pad','bos']:
+                # Override
+                setattr(params, k, v)
         else:
             params.add_hparam(k, v)
 
@@ -443,6 +444,9 @@ def main(args):
 
             print("epoch = %d, step = %d, loss = %.3f (%.3f sec)" %
                   (epoch + 1, step, float(loss), t))
+
+            utils.evaluate(model, sorted_key, eval_dataset,
+                           params.output, references, params)
 
             if counter % params.update_cycle == 0:
                 if step >= params.train_steps:

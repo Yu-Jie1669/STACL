@@ -56,9 +56,9 @@ def default_params():
         output=None,
         vocabulary=None,
         # vocabulary specific
-        pad="<pad>",
-        bos="<bos>",
-        eos="<eos>",
+        pad="<s>",
+        bos="<e>",
+        eos="<e>",
         unk="<unk>",
         device_list=[0],
         # decoding
