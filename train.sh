@@ -10,7 +10,7 @@ python trainer.py \
   --validation \
   data/val/val.zh.bpe \
   --references \
-  data/val/val.en.* \
+  data/val/val.en.\* \
   --process_group \
   nccl \
   --parameters=batch_size=16,update_cycle=2,device_list=[1] \
