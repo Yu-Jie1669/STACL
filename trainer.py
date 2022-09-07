@@ -73,9 +73,9 @@ def default_params():
         output="",
         model="transformer",
         vocab=["", ""],
-        pad="<pad>",
-        bos="<eos>",
-        eos="<eos>",
+        pad="<s>",
+        bos="<e>",
+        eos="<e>",
         unk="<unk>",
         # Dataset
         batch_size=4096,
