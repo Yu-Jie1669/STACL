@@ -20,6 +20,8 @@ import torch.distributed as dist
 import thumt.models as models
 import thumt.utils as utils
 
+from model.stacl import STACLTransformer
+
 
 def parse_args():
     parser = argparse.ArgumentParser(
@@ -150,7 +152,7 @@ def infer_gpu_num(param_str):
 
 def main(args):
     # Load configs
-    model_cls_list = [models.get_model(model) for model in args.models]
+    model_cls_list = [STACLTransformer]
     params_list = [default_params() for _ in range(len(model_cls_list))]
     params_list = [
         merge_params(params, model_cls.default_params())
