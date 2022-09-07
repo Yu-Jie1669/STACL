@@ -308,6 +308,7 @@ def load_references(pattern):
 
 def main(args):
     model_cls = STACLTransformer
+    print(args)
 
     # Import and override parameters
     # Priorities (low -> high):
